@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.css/' %}">
+
+</head>
+
+
+<style>
+    body {
+        background-color: #8EC5FC;
+background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+
+
+    }
+
+    .detail__img {
+        height: 500px;
+        width: 500px;
+        margin-left: 300px;
+
+
+    }
+
+    .shows__container {
+        object-fit: fill;
+    }
+
+    .btn-primary {
+        height: 40px;
+    }
+
+    .butons {
+
+
+    }
+</style>
+<body>
+<div class="container shows__container">
+   <img src="{{ films_detail.image.url }}" class="detail__img" alt="">
+    <h1>{{ films_detail.title }}</h1>
+        <p>{{ films_detail.director }}</p>
+        <p>{{ films_detail.rating }}</p>
+        <p>{{ films_detail.duration }}</p>
+        <hr/>
+<h2>Review</h2>
+{% for i in review %}
+    <p>{{ i.text }}</p>
+    <hr>
+{% endfor %}
+</div>
+
+</body>
+</html>
